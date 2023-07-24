@@ -1,0 +1,100 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock title %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+  <script src="https://kit.fontawesome.com/7c95b809d8.js" crossorigin="anonymous"></script>
+  <style>
+    .nav-bar-content a p {
+      width: 8px;
+      height: 8px;
+      background: red;
+      border-radius: 8px;
+      margin-left: -5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- urls  -->
+  {% url 'Home' as home %}
+  {% url 'chats' as chat %}
+  {% url 'calls' as call %}
+  {% url 'settings' as setting %}
+
+  <nav id="navbar" class="sticky-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="brand-logo">
+            <h1>WeChat</h1>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="action-content-header d-flex justify-content-between align-items-center"
+            style="height: 55px;width: 90px;float: right;">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href=""><i class="fa-solid fa-plus"></i></a>
+            <a href=""><i class="fa-solid fa-grip-lines"></i></i></a>
+            <!-- <i class="fa-solid fa-bell"></i> <span style="margin-left: -12px;position: absolute;top: 15px;right: 5px;background: red;width: 15px;height: 15px;border-radius: 15px;font-size: 10px;text-align: center;color: white !important;font-weight: bold;" id="notification_count">0</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    {% block body %}{% endblock body %}
+  </main>
+
+  <footer id="footer">
+    <div class="footer-content h-100 p-2">
+      <div class="row">
+        <div class="col-3">
+          <div class="nav-bar-content text-center {% if request.path == home %} active {% endif %}">
+            <a href="{% url 'Home' %}"><i class="fa-solid fa-house"></i></a>
+            <p>Home</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="nav-bar-content text-center {% if request.path == chat %} active {% endif %}">
+            <a href="{% url 'chats' %}" class="text-decoration-none d-flex justify-content-center"
+              style="margin-left: 5px;">
+              <i class="fa-solid fa-comment-dots"></i>
+              {% if notification_obj %}
+              <p class="d-block" id="notificatin_bell"></p>
+              {% else %}
+              <p class="d-none" id="notificatin_bell"></p>
+              {% endif %}
+            </a>
+            <p>Chats</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="nav-bar-content text-center {% if request.path == call %} active {% endif %}">
+            <a href="{% url 'calls' %}"><i class="fa-solid fa-phone"></i></a>
+            <p>Calls</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="nav-bar-content text-center {% if request.path == setting %} active {% endif %}">
+            <a href="{% url 'settings' %}"><i class="fa-solid fa-gear"></i></a>
+            <p>Settings</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

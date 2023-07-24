@@ -1,0 +1,41 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome screen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+</head>
+
+<body>
+    <div id="welcome-wordwrap">
+        <div class="content_wrap mt-5">
+            <div class="chat-cover">
+                <img src="{% static 'account/images/chat-cover.png' %}" alt="" style="width: 100%;">
+            </div>
+        </div>
+        <div class="content_wrap mt-3">
+            <p class="text-center"
+                style="font-size: 15px;padding: 10px 25px 0px 15px;font-family: arial;font-weight: 500;color: gray;">
+                Connect easily
+                with your family and friends worldwide with <span style="color: #FF00E2;">weChat</span> </p>
+        </div>
+        <div class="content_wrap d-flex justify-content-center align-items-end">
+            <div class="action-btn" style="margin-bottom: 65px;">
+                <a href="" class="text-decoration-none text-center" style="color: #FF00E2;margin-left: 25%;">Terms &
+                    Privacy
+                    Policy</a><br>
+                <a href="{% url 'signin' %}" class="btn bt-sm btn-outline-secondary" style="width: 20em !important;margin-top: 5px;">
+                    Start Messaging
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

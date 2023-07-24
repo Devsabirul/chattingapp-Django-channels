@@ -1,0 +1,111 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Settings page {% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="user_content d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="avatar_account">
+                        <img src="{{user.avatar.url}}" alt="">
+                    </div>
+                    <div class="info_account">
+                        <h5>{{user.first_name}}</h5>
+                        <p>{{user.email}}</p>
+                    </div>
+                </div>
+                <div class="settings_action_btn">
+                    <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="settings_content_wrap ">
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black"><i class="fa-solid fa-user"></i> &nbsp
+                            Account</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black"><i class="fa-regular fa-comment"></i> &nbsp
+                            Chats</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black">
+                            <i class="fa-solid fa-sun"></i> &nbsp
+                            Appereance</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black">
+                            <i class="fa-regular fa-bell"></i> &nbsp
+                            notification</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black">
+                            <i class="fa-solid fa-shield-halved"></i> &nbsp
+                            Privacy</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black">
+                            <i class="fa-solid fa-file"></i> &nbsp
+                            Data Usage</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black">
+                            <i class="fa fa-question-circle" aria-hidden="true"></i> &nbsp
+                            Help</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="settings_content_list d-flex justify-content-between mb-3">
+                    <div class="settings_content">
+                        <a href="" class="text-decoration-none text-black">
+                            <i class="fa-solid fa-envelope"></i> &nbsp
+                            Invite your friends</a>
+                    </div>
+                    <div class="settings_action_btn">
+                        <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'core/js/notification.js' %}"></script>
+{% endblock body %}

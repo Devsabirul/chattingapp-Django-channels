@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Chat page {% endblock title %}
+{% block body %}
+<style>
+    .False {
+        font-weight: bold;
+        color: #000000 !important;
+    }
+</style>
+<div class="chat-wrap" style="padding: 10px;">
+    {% for user,last_message in user_data %}
+    <div class="chat-list-wrap d-flex mb-lg-2" style="margin-bottom: 3px;">
+        <div class="chat-item-avatar">
+            <a href="{% url 'chats_page' user.id %}">
+                <img src="{{user.avatar.url}}" alt="">
+            </a>
+        </div>
+        <div class="chat-item-about-contact">
+            <div class="chat-contetn">
+                <p style="font-size: 19px;margin-bottom: 2px;font-family: system-ui;font-weight: 500;">
+                    <a href="{% url 'chats_page' user.id %}"
+                        class="text-decoration-none text-black">{{user.first_name}}</a>
+                </p>
+                {% if last_message %}
+                {% if last_message.user.id == request.user.id %}
+                <p class="{{last_message.is_seen}}" style="font-size: 13px;color: gray;line-height: 1.2;">
+                    {{ last_message |truncatechars:35}}
+                </p>
+                {% else %}
+                <p class="" style="font-size: 13px;color: gray;line-height: 1.2;">
+                    {{ last_message |truncatechars:35 }}
+                </p>
+                {% endif %}
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+</div>
+<script src="{% static 'core/js/notification.js' %}"></script>
+
+
+{% endblock body %}

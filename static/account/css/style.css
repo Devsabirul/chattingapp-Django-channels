@@ -1,0 +1,55 @@
+body {
+    width: 49% !important;
+    margin: 0 auto;
+    border: 1px solid;
+}
+
+div#welcome-wordwrap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.content_wrap {
+    flex: 1;
+}
+
+
+
+/* for login page  */
+a.back-btn {
+    text-decoration: none;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+a.back-btn i {
+    margin-top: 15px;
+    color: black;
+}
+
+.login-form p {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: gray;
+    line-height: 1.5;
+    font-family: arial;
+    font-size: 15px;
+}
+
+
+
+/* media querty  */
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100% !important;
+        border: None;
+        margin: None;
+    }
+}

@@ -1,0 +1,386 @@
+body {
+    width: 49% !important;
+    margin: 0 auto;
+    height: 100vh;
+    border: 1px solid gray;
+}
+
+nav#navbar {
+    height: 55px;
+    width: 100%;
+    background: #5f50ff;
+    color: white;
+}
+
+.brand-logo h1 {
+    line-height: 55px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.action-content-header a i {
+    color: white;
+    font-size: 20px;
+}
+
+footer#footer {
+    position: fixed;
+    bottom: 0;
+    background: #dddddd;
+    width: 48.8% !important;
+    height: 55px !important;
+}
+
+.nav-bar-content {
+    line-height: 20px;
+}
+
+.nav-bar-content {
+    line-height: 20px;
+}
+
+.nav-bar-content p {
+    color: gray;
+}
+
+.nav-bar-content a i {
+    font-size: 20px;
+    color: gray;
+}
+
+.nav-bar-content a {
+    display: block;
+}
+
+.active p {
+    color: #FF00E2;
+}
+
+.active a i {
+    font-size: 20px;
+    color: #FF00E2;
+}
+
+/* chat  */
+
+.chat-item-avatar {
+    width: 55px;
+    height: 55px;
+    background: gray;
+    border-radius: 55px;
+    overflow: hidden;
+    border: 1px solid #AA55EE;
+    /* margin-top: 3px; */
+}
+
+.chat-item-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat-item-about-contact {
+    width: 65%;
+    margin-left: 13px;
+    padding-top: 3px;
+}
+
+.chat-item-action {
+    width: 15%;
+    text-align: center;
+}
+
+/* chat end  */
+
+/* chat-page  */
+div#header {
+    height: 65px;
+    width: 100%;
+    background: #4FBC87;
+}
+
+.header-wrap {
+    height: 60px;
+}
+
+.back-btn a i {
+    color: white;
+    font-size: 25px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: gray;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    border: 1px solid gray;
+}
+
+.profile-info a {
+    font-size: 18px;
+    font-family: ABeeZee;
+}
+
+.profile-info {
+    margin-top: 15px;
+    line-height: 1.3;
+}
+
+.profile-content {
+    width: 65%;
+}
+
+.chat-action-profile a {
+    font-size: 22px;
+    padding: 10px;
+}
+
+.chat-action-profile {
+    width: 30%;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* chat page end  */
+
+
+/* footer start  */
+.card-footer {
+    border-top: 1px solid gray;
+    width: 48.8% !important;
+}
+
+input#message_input:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.avatar_ {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e84118;
+    /*padding: 1px;*/
+    flex: none;
+    margin-left: -15px !important;
+}
+
+.position-relative.avatar_ img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+}
+
+.position-relative img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* calls  */
+.avatar_call {
+    width: 55px;
+    height: 55px;
+    border-radius: 55px;
+    overflow: hidden;
+    background: lightblue;
+    border: 1px solid red;
+}
+
+.avatar_call img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user_info {
+    margin-left: 10px;
+    line-height: 1;
+}
+
+.user_info h6 {
+    font-size: 20px;
+    font-family: system-ui;
+}
+
+.user_info p {
+    font-size: 15px;
+    color: gray;
+    font-family: system-ui;
+}
+
+.call_icon a i {
+    font-size: 20px;
+    color: #505356;
+    padding: 7px;
+}
+
+.call_icon {
+    margin-top: 8px;
+}
+
+/* voice call  */
+.call_container_wrap {
+    height: 25vh;
+    background: #58D582;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.call_header_content h4 {
+    font-size: 25px;
+    font-family: system-ui;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.call_header_content h6 {
+    font-family: system-ui;
+    font-weight: 400;
+}
+
+.call_header_content {
+    padding-top: 10px;
+}
+
+.wrap_calls {
+    height: 100vh;
+}
+
+.call_footer_content {
+    position: fixed;
+    bottom: 45px;
+    width: 49%;
+}
+
+.call_end {
+    width: 63px;
+    height: 63px;
+    overflow: hidden;
+}
+
+.call_end img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.call_body_content {
+    height: 78vh;
+    /* background-image: linear-gradient(to bottom right, #252222, #252523); */
+}
+
+.call_body_content img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* setting page  */
+.avatar_account {
+    width: 60px;
+    height: 60px;
+    background: gray;
+    margin-right: 10px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.user_content {
+    margin-top: 10px;
+}
+
+.info_account {
+    line-height: 1;
+}
+
+.info_account h5 {
+    padding-top: 10px;
+    font-family: system-ui;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info_account p {
+    font-size: 15px;
+    font-family: system-ui;
+    font-weight: 400;
+    color: gray;
+}
+
+.avatar_account img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.settings_content_wrap {
+    margin-top: 35px;
+}
+
+.settings_content a {
+    font-size: 18px;
+    font-family: system-ui;
+    font-weight: 500;
+    color: #0c0c0c !important;
+}
+
+.settings_content a i {
+    color: #0c0c0c;
+}
+
+.settings_action_btn a {
+    font-size: 18px;
+    color: black;
+    margin-right: 5px;
+}
+
+.settings_content {
+    margin-left: 5px;
+}
+
+
+/* media querty  */
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100% !important;
+        border: None;
+        margin: None;
+    }
+
+    footer#footer {
+        position: fixed;
+        bottom: 0;
+        background: #dddddd;
+        width: 100% !important;
+        height: 55px !important;
+    }
+
+    .card-footer {
+        width: 100% !important;
+    }
+
+    .call_container_wrap {
+        height: 22vh;
+        background: #58D582;
+        text-align: center;
+        color: white;
+        width: 100%;
+    }
+
+    .call_footer_content {
+        width: 100%;
+    }
+
+}

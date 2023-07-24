@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Calls page {% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-12">
+            <h6>Recent Calls</h6>
+        </div>
+    </div>
+    <div class="call_container">
+        {% for user in users %}
+        <div class="call_list mt-2 d-flex justify-content-between">
+            <div class="left d-flex ">
+                <div class="avatar_call">
+                    <img src="{{user.avatar.url}}" alt="">
+                </div>
+                <div class="user_info">
+                    <h6>{{user.first_name}}</h6>
+                    <p>Today 8:56pm</p>
+                </div>
+            </div>
+            <div class="call_icon">
+                <a href="" class="text-white text-decoration-none"><i class="fa-solid fa-video"></i></a>
+                <a href="{% url 'voice_call' user.id %}"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+        {% endfor %}
+
+        <video></video>
+
+    </div>
+</div>
+
+<script src="{% static 'core/js/notification.js' %}"></script>
+{% endblock body %}

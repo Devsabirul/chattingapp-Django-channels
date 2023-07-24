@@ -1,0 +1,132 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/7c95b809d8.js" crossorigin="anonymous"></script>
+
+    <style>
+        *::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="header-wrap p-2 d-flex align-items-center">
+            <div class="back-btn">
+                <a href="{% url 'chats' %}"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="profile-content d-flex">
+                <div class="avatar">
+                    <img src="{{user.avatar.url}}" alt="">
+                </div>
+                <div class="profile-info" style="width: 70%;">
+                    <a href="" class="text-decoration-none text-white">{{user.first_name|truncatechars:15}}</a>
+                    <p class="text-white" style="font-size: 12px;"> Active Now</p>
+                </div>
+            </div>
+            <div class="chat-action-profile d-flex justify-content-end">
+                <a href="" class="text-white text-decoration-none"><i class="fa-solid fa-phone"></i></a>
+                <a href="" class="text-white text-decoration-none"><i class="fa-solid fa-video"></i></a>
+            </div>
+        </div>
+        <!-- message body  -->
+
+        <div class="card-body p-4 pt-3" id="message_body" style="height: 75vh;overflow: auto;">
+
+            {% for message in messages %}
+                {% if message.sender == request.user.id %}
+                        <div class="d-flex align-items-baseline pt-1 text-end justify-content-end">
+                        <div class="pe-2" style="margin-right: 0.5rem !important;">
+                            <div>
+                                <div class="card card-text d-inline-block p-2 px-3 m-1"
+                                    style="text-align: justify;line-height: 20px;background: #4FBC87;color: white;">
+                                    {{message}}
+                                </div>
+                            </div>
+                            <div>
+                                <div class="small" style="font-size: 10px;">
+                                    {{ message.timestamp|time:'h:i A' }}</div>
+                            </div>
+                        </div>
+                        <div class="position-relative avatar_">
+                            <img src="{{request.user.avatar.url}}" class="img-fluid" alt="">
+                            <span
+                                class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </div>
+                    </div>
+                {% else %}
+                            <div class="d-flex align-items-baseline">
+                            <div class="position-relative avatar_">
+                                <img src="{{user.avatar.url}}" class="img-fluid " alt="">
+                                <span
+                                    class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                                    <span class="visually-hidden">New alerts</span>
+                                </span>
+                            </div>
+                            <div class="pe-2" style="margin-right: 0.5rem !important;">
+                                <div style="margin-left: 5px;">
+                                    <div class="card card-text d-inline-block p-2 px-3 m-1"
+                                        style="text-align: justify;line-height: 18px;background: #EFEEF4;color: #5e5e5e;">{{message}}
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small" style="font-size: 10px;margin-left: 5px;">{{ message.timestamp|time:'h:i A' }}</div>
+                                </div>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- footer  -->
+
+        <div class="card-footer bg-white position-fixed w-100 bottom-0 m-0 p-1">
+            <div class="input-group">
+                <form action="" class="d-flex justify-content-between w-100" id="message_form">
+                    <input type="text" class="form-control border-0" placeholder="Write a message..."
+                        id="message_input">
+
+                    <div class="input-group-text bg-transparent border-0">
+                        <button class="btn btn-primary" id="send_btn" style="background: #4FBC87;border: none;">
+                            send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- get user id  -->
+    {{request.user.id|json_script:"json-sender-id"}}
+    {{user.avatar.url|json_script:"json-receiver-avatar"}}
+    {{user.username|json_script:"json-receiver-username"}}
+    {{request.user.avatar.url|json_script:"json-sender-avatar"}}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="{% static 'core/js/chat.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            // Get the message container
+            var messageContainer = $('#message_body');
+            // Scroll to the last message
+            messageContainer.animate({
+                scrollTop: messageContainer.prop('scrollHeight')
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
